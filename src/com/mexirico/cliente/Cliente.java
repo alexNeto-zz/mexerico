@@ -12,11 +12,13 @@ public class Cliente {
 	private final String host;
 	private final int porta;
 	private Socket cliente;
+	private String nomeUsuario;
 
-	public Cliente(String host, int porta) {
+	public Cliente(String host, int porta, String nomeUsuario) {
 
 		this.host = host;
 		this.porta = porta;
+		this.nomeUsuario = nomeUsuario;
 
 	}
 
@@ -28,7 +30,7 @@ public class Cliente {
 			PrintStream saida = new PrintStream(this.getClienteOutputStream());
 
 			while (teclado.hasNextLine()) {
-				saida.println(teclado.nextLine());
+				saida.println(nomeUsuario + teclado.nextLine());
 				System.out.print(String.format("\033[%dA", 1));
 				System.out.print("\033[2K");
 			}

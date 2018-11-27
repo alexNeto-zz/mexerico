@@ -1,5 +1,7 @@
 package com.mexirico.commander;
 
+import static com.mexirico.commander.Estilista.coloreTexto;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
@@ -21,6 +23,7 @@ public class Commander {
 		options.addOption(OptionsEnum.EXAMPLE.option, false, "display current time");
 		options.addOption(OptionsEnum.COMECA_CLIENTE.option, true, "Inicia o Cliente");
 		options.addOption(OptionsEnum.COMECA_SERVIDOR.option, false, "Inicia o servidor");
+		options.addOption(OptionsEnum.NOME.option, true, "Define nome para usuario");
 		return options;
 	}
 
@@ -41,14 +44,19 @@ public class Commander {
 			iniciaServidor();
 		}
 		if (commander.hasOption(OptionsEnum.COMECA_CLIENTE.option)) {
-			iniciaCliente(commander.getOptionValue(OptionsEnum.COMECA_CLIENTE.option));
+			iniciaCliente(commander.getOptionValue(OptionsEnum.COMECA_CLIENTE.option),
+					pegaNome(commander.getOptionValue(OptionsEnum.NOME.option)));
 		}
 
 	}
 
-	private void iniciaCliente(String host) {
+	private String pegaNome(String nome) {
+		return nome != null ? coloreTexto(nome, CoresEnum.VERDE) : coloreTexto("anon", CoresEnum.VERMELHO) + ": ";
+	}
+
+	private void iniciaCliente(String host, String nomeUsuario) {
 		try {
-			Cliente cliente = new Cliente(host, 9009);
+			Cliente cliente = new Cliente(host, 9009, nomeUsuario);
 			System.out.println(host);
 			cliente.conectar();
 		} catch (Exception ignores) {
