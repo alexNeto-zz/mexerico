@@ -3,7 +3,9 @@ package com.chatter.cliente;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.io.PrintStream;
 import java.net.Socket;
+import java.util.Scanner;
 
 public class Cliente {
     
@@ -19,25 +21,27 @@ public class Cliente {
     }
     
     public void conectar() throws IOException{
-        
-        //Cria um novo socket com o IP e porta fornecidos na construção da classe.
         this.cliente = new Socket(this.host, this.porta);
         System.out.println("O cliente conseguiu se conectar ao servidor!");
+        new Thread(new Ouvidor(getClienteInputStream())).start();
+//        new Atualizador(getClienteInputStream()).run();
+        Scanner teclado = new Scanner(System.in);
+        PrintStream saida = new PrintStream(this.getClienteOutputStream());
+        
+        while(teclado.hasNextLine()) {
+        	saida.println(teclado.nextLine());
+        	System.out.print(String.format("\033[%dA",1)); // Move up
+        	System.out.print("\033[2K"); 
+        }
         
     }
     
-    //Retorna o OutputStream de cliente. Necessário para conseguir enviar mensagens.
-    public OutputStream getClienteOutputStream() throws IOException{
-        
+    public OutputStream getClienteOutputStream() throws IOException{    
         return cliente.getOutputStream();
-        
     }
     
-    //Retorna o InputStream de cliente. Necessário para conseguir enviar mensagens.
-    public InputStream getClienteInputStream() throws IOException{
-        
+    public InputStream getClienteInputStream() throws IOException{    
         return cliente.getInputStream();
-        
     }
     
 }
