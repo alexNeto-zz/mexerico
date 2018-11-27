@@ -1,4 +1,4 @@
-package com.mexirico.commander;
+package com.mexerico.commander;
 
 public enum CoresEnum {
 

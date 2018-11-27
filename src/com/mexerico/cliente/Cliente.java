@@ -1,4 +1,4 @@
-package com.mexirico.cliente;
+package com.mexerico.cliente;
 
 import java.io.IOException;
 import java.io.InputStream;

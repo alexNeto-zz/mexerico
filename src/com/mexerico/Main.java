@@ -1,6 +1,6 @@
-package com.mexirico;
+package com.mexerico;
 
-import com.mexirico.commander.Commander;
+import com.mexerico.commander.Commander;
 
 public class Main {
 

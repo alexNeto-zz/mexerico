@@ -1,14 +1,14 @@
-package com.mexirico.commander;
+package com.mexerico.commander;
 
-import static com.mexirico.commander.Estilista.coloreTexto;
+import static com.mexerico.commander.Estilista.coloreTexto;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 
-import com.mexirico.cliente.Cliente;
-import com.mexirico.servidor.Servidor;
+import com.mexerico.cliente.Cliente;
+import com.mexerico.servidor.Servidor;
 
 public class Commander {
 

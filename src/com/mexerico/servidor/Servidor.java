@@ -1,6 +1,6 @@
-package com.mexirico.servidor;
+package com.mexerico.servidor;
 
-import static com.mexirico.commander.Estilista.coloreTexto;
+import static com.mexerico.commander.Estilista.coloreTexto;
 
 import java.io.IOException;
 import java.io.PrintStream;
@@ -9,7 +9,7 @@ import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mexirico.commander.CoresEnum;
+import com.mexerico.commander.CoresEnum;
 
 public class Servidor {
 

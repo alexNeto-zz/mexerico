@@ -1,4 +1,4 @@
-package com.mexirico.servidor;
+package com.mexerico.servidor;
 
 import java.io.InputStream;
 import java.util.Scanner;
