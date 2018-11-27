@@ -1,4 +1,4 @@
-package com.chatter.cliente;
+package com.mexirico.cliente;
 
 import java.io.InputStream;
 import java.util.Scanner;

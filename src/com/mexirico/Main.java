@@ -1,6 +1,6 @@
-package com.chatter;
+package com.mexirico;
 
-import com.chatter.commander.Commander;
+import com.mexirico.commander.Commander;
 
 public class Main {
 

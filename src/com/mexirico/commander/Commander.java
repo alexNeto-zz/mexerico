@@ -1,12 +1,12 @@
-package com.chatter.commander;
+package com.mexirico.commander;
 
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.DefaultParser;
 import org.apache.commons.cli.Options;
 
-import com.chatter.cliente.Cliente;
-import com.chatter.servidor.Servidor;
+import com.mexirico.cliente.Cliente;
+import com.mexirico.servidor.Servidor;
 
 public class Commander {
 
@@ -48,7 +48,7 @@ public class Commander {
 
 	private void iniciaCliente(String host) {
 		try {
-			Cliente cliente = new Cliente(host, 9000);
+			Cliente cliente = new Cliente(host, 9009);
 			System.out.println(host);
 			cliente.conectar();
 		} catch (Exception ignores) {
@@ -58,7 +58,7 @@ public class Commander {
 
 	private void iniciaServidor() {
 		try {
-			Servidor servidor = new Servidor(9000);
+			Servidor servidor = new Servidor(9009);
 			servidor.abreServidor();
 		} catch (Exception ignored) {
 			System.out.println("Não foi possível estabelecer uma conexão");

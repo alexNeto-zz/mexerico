@@ -1,4 +1,4 @@
-package com.chatter.commander;
+package com.mexirico.commander;
 
 public enum OptionsEnum {
 

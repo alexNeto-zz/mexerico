@@ -1,4 +1,4 @@
-package com.chatter.servidor;
+package com.mexirico.servidor;
 
 import java.io.IOException;
 import java.io.PrintStream;
