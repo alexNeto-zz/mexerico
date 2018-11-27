@@ -4,7 +4,8 @@ public enum OptionsEnum {
 
 	EXAMPLE("t"),
 	COMECA_CLIENTE("c"),
-	COMECA_SERVIDOR("s");
+	COMECA_SERVIDOR("s"),
+	NOME("n");
 
 	public String option;
 

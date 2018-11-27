@@ -1,11 +1,15 @@
 package com.mexirico.servidor;
 
+import static com.mexirico.commander.Estilista.coloreTexto;
+
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.ArrayList;
 import java.util.List;
+
+import com.mexirico.commander.CoresEnum;
 
 public class Servidor {
 
@@ -21,7 +25,8 @@ public class Servidor {
 
 	public void abreServidor() throws IOException {
 		try (ServerSocket servidor = new ServerSocket(this.porta)) {
-			System.out.println("Servidor na porta " + this.porta + " aberto!");
+			System.out.println(
+					"Servidor na porta " + coloreTexto(Integer.toString(this.porta), CoresEnum.VERMELHO) + " aberto!");
 
 			while (true) {
 				Socket cliente = servidor.accept(); // Aceita a conexão com o cliente.

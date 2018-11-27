@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>com.chatter</groupId>
-  <artifactId>java-cli-chatter</artifactId>
-  <version>0.0.0</version>
+  <groupId>com.mexirico</groupId>
+  <artifactId>mexirico</artifactId>
+  <version>0.0.1</version>
   <build>
     <sourceDirectory>src</sourceDirectory>
-    <finalName>chatter</finalName>
+    <finalName>mexirico</finalName>
     <plugins>
       <plugin>
         <artifactId>maven-compiler-plugin</artifactId>
@@ -22,7 +22,7 @@
           <archive>
             <manifest>
               <addClasspath>true</addClasspath>
-              <mainClass>com.chatter.Main</mainClass>
+              <mainClass>com.mexirico.Main</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -39,7 +39,7 @@
             <configuration>
               <transformers>
                 <transformer>
-                  <mainClass>com.chatter.Main</mainClass>
+                  <mainClass>com.mexirico.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
