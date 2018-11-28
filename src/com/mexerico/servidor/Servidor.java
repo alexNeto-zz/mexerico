@@ -30,7 +30,8 @@ public class Servidor {
 
 			while (true) {
 				Socket cliente = servidor.accept(); // Aceita a conexão com o cliente.
-				System.out.println("Conexão com o cliente " + cliente.getInetAddress().getHostAddress()
+				System.out.println("Conexão com o cliente "
+						+ coloreTexto(cliente.getInetAddress().getHostAddress(), CoresEnum.VERMELHO)
 						+ " estabilizada com sucesso!");
 
 				PrintStream caminho_mensagens = new PrintStream(cliente.getOutputStream());
