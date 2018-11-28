@@ -51,16 +51,16 @@ public class Commander {
 	}
 
 	private String pegaNome(String nome) {
-		return nome != null ? coloreTexto(nome, CoresEnum.VERDE) : coloreTexto("anon", CoresEnum.VERMELHO) + ": ";
+		return (nome != null ? coloreTexto(nome, CoresEnum.VERDE) : coloreTexto("anon", CoresEnum.VERMELHO)) + ": ";
 	}
 
 	private void iniciaCliente(String host, String nomeUsuario) {
 		try {
 			Cliente cliente = new Cliente(host, 9009, nomeUsuario);
-			System.out.println(host);
+			System.out.println(coloreTexto(host, CoresEnum.VERDE));
 			cliente.conectar();
 		} catch (Exception ignores) {
-			System.out.println("Não foi possível estabelecer conexão com o cliente");
+			System.out.println(coloreTexto(getErroCliente(), CoresEnum.VERMELHO));
 		}
 	}
 
@@ -69,7 +69,15 @@ public class Commander {
 			Servidor servidor = new Servidor(9009);
 			servidor.abreServidor();
 		} catch (Exception ignored) {
-			System.out.println("Não foi possível estabelecer uma conexão");
+			System.out.println(coloreTexto(getErroServidor(), CoresEnum.VERMELHO));
 		}
+	}
+
+	private String getErroServidor() {
+		return "Não foi possível estabelecer uma conexão";
+	}
+
+	private String getErroCliente() {
+		return "Não foi possível estabelecer conexão com o cliente";
 	}
 }
