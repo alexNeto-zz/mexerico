@@ -33,7 +33,7 @@ public class Cliente {
 				System.out.println("dummy");
 				System.out.print(String.format("\033[%dA", 1));
 				System.out.print("\033[2K");
-				saida.println("você: " + teclado.nextLine());
+				saida.println(nomeUsuario + teclado.nextLine());
 				System.out.print(String.format("\033[%dA", 1));
 				System.out.print("\033[2K");
 			}
