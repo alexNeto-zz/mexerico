@@ -1,10 +1,14 @@
 # mexerico
-aplicativo de conversação via sockets, usando java
+Aplicativo de conversação via sockets, usando java
 
-# Como usar
+# Instalação
+Baixe o codigo fonte com `$ git clone https://github.com/alexNeto/mexerico`
 
-Primeiro faça a build do projeto com `$ mvn package`
+Faça a build do projeto com `$ mvn package`
 
-para terstar localmente será necessário 3 terminais, uma para o servidor e outros 2 para testar os clientes
+# Uso
+Testar localmente requere 3 terminais, uma para o servidor e outros 2 para testar os clientes
 
-para subir o servidor basta o comando `$ java -jar target/mexerico.jar -s`. Para subir os clientes use `$ java -jar target/mexerico -c <ip> [-n <nome>]`
+Suba o servidor com o comando `$ java -jar target/mexerico.jar -s`
+
+Suba clientes com o comando `$ java -jar target/mexerico -c <ip> [-n <nome>]`
